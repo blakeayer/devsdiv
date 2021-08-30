@@ -8,14 +8,20 @@ header {
     align-items: center;
 }
 
-span {
-    color: #61dafb;
-}
-
-.box {
+.container {
     display: flex;
     align-items: center;
     padding: 1rem;
+}
+
+.blockContainer {
+    display: flex;
+    align-items: center;
+}
+
+ul.header {
+    list-style-type: none;
+    display: flex;
 }
 
 input {
@@ -28,6 +34,7 @@ button {
 
 .link {
     color: #61dafb;
+    margin: 1rem;
 }
 
 .logo {

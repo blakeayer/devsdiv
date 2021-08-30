@@ -1,0 +1,61 @@
+/* <CreatePost /> Text Editor Styles */
+div.CreatePost div.DraftEditor-root {
+    width: 30rem;
+    height: 10rem;
+    max-height: 10rem;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    display: inline-block;
+}
+
+div.CreatePost div.DraftEditor-editorContainer,
+div.CreatePost div.public-DraftEditor-content {
+    height: 100%
+}
+
+/* <CreateComment /> Text Editor Styles */
+div.CreateComment div.DraftEditor-root {
+    width: 30rem;
+    height: 10rem;
+    max-height: 10rem;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    display: inline-block;
+}
+
+div.CreateComment div.DraftEditor-editorContainer,
+div.CreateComment div.public-DraftEditor-content {
+    height: 100%
+}
+
+div.PostDetail div.DraftEditor-root {
+    max-height: 10rem;
+    overflow-y: auto;
+    display: inline-block;
+}
+
+div.PostDetail div.DraftEditor-editorContainer,
+div.PostDetail div.public-DraftEditor-content {
+    height: 100%
+}
+
+.inlineStyleControls,
+.blockStyleControls {
+    display:inline-block
+}
+
+.menu {
+    padding: 0px;
+    margin: 10px 5px 0px 5px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #1c1e24;
+    display: flex;
+    justify-content: space-between;
+}

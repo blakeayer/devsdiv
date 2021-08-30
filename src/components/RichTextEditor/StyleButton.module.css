@@ -1,0 +1,16 @@
+.styleButton {
+    background-color: white;
+    color: #444;
+    cursor: pointer;
+    margin: 4px; 
+    padding: 0px 2px;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid black;
+    min-width: 1.5rem;
+}
+
+.activeButton {
+    background-color: #666;
+    color: #ddd;
+}

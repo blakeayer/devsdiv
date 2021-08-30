@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}  
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formControls {
+    display: block;
+}
+
+.formControl input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 30rem;
+    max-width: 100%;
+}
+
+.formActions {
+    margin: 0.25em 0;
+    display: flex;
+    align-items: left;
+    color: #ccc;
+}
+
+.formControl input:focus {
+    outline: none;
+    border-color: #61dafb;
+    background-color: #cef4ff;
+}
+
+.link {
+    color: #61dafb;
+    cursor: pointer;
+}
+
+.img-name {
+    color: #ccc;
+}

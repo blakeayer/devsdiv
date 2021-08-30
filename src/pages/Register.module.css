@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}  
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.registerationForm {
+    padding: 1rem 1rem;
+    margin: 4rem 10rem;
+}
+
+.form {
+    padding: 0.5rem;
+    margin: 1rem 1rem;
+}
+
+label {
+    color: #aaa;
+    width: 6rem;
+    text-align: right;
+    display: inline-block;
+}
+
+.formControls {
+    display: block;
+}
+
+.formControl input,
+.formControl select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 10rem;
+    max-width: 100%;
+}
+
+.formControl input:focus {
+    outline: none;
+    border-color: #61dafb;
+    background-color: #cef4ff;
+}
+
+.loading {
+    color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.errorText {
+    color: #b40e0e;
+}
+
+.invalid input {
+    border: 1px solid #b40e0e;
+    background-color: #fbd2d2;
+}
+
+button:disabled,
+button:disabled:hover,
+button:disabled:active {
+    border-color: #aaa;
+    background-color: #aaa;
+    color: #444;
+    /* cursor: not-allowed; */
+}
