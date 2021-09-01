@@ -1,0 +1,58 @@
+header {
+    background-color: #1c1e24;
+    width: 100;
+    height: 15vmin;
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.blockContainer {
+    display: flex;
+    align-items: center;
+}
+
+ul.header {
+    list-style-type: none;
+    display: flex;
+}
+
+input {
+    margin: 0px 5px;
+}
+
+button {
+    margin: 0px 5px;
+}
+
+.link {
+    color: #61dafb;
+    margin: 1rem;
+}
+
+.logo {
+    height: 10vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+
+@keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}

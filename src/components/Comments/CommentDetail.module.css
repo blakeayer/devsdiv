@@ -1,0 +1,55 @@
+.container-column {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1em;
+    color: #aaa;
+}
+
+.container-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-row p {
+    margin-right: 1em;
+}
+
+.username {
+    font-weight: bold;
+    color: #61dafb;
+}
+
+
+
+/* .detail {
+    display: flex;
+    text-align: left;
+    padding: 0.5rem;
+    margin: 1rem 1rem;
+} */
+
+/* .containerColumn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+} */
+
+/* .containerRow {
+    display: flex;
+    flex-direction: row;
+} */
+
+/* .child {
+    margin: 0 0.5rem;
+    color: #aaa;
+} */
+
+/* .username {
+    font-weight: bold;
+    color: #61dafb;
+} */
+
+/* .textEditor {
+    padding-left: 7px;
+} */
+

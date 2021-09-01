@@ -1,0 +1,22 @@
+ul.list {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+}
+
+.listItem {
+    text-align: left;
+    flex: 6;
+}
+
+.listItemWrapper {
+    margin-bottom: 20px;
+}
+
+.thumbnail {
+    flex: 1;
+}
+
+.container-row {
+    display: flex;
+}

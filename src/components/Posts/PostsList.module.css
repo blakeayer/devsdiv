@@ -1,0 +1,24 @@
+ul.list {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+}
+
+.listItem {
+    max-height: 14rem;
+    overflow: hidden;
+    text-align: left;
+    flex: 4;
+}
+
+.listItemWrapper {
+    margin-bottom: 20px;
+}
+
+.thumbnail {
+    flex: 1;
+}
+
+.container-row {
+    display: flex;
+}

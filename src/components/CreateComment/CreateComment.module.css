@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}  
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formControls {
+    display: block;
+}
+
+.formControl input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 30rem;
+    max-width: 100%;
+}
+
+.formActions {
+    margin: 0.25em 0;
+    display: flex;
+    align-items: left;
+    color: #ccc;
+}
+
+.formControl input:focus {
+    outline: none;
+    border-color: #61dafb;
+    background-color: #cef4ff;
+}
+
+.link {
+    color: #61dafb;
+    cursor: pointer;
+}
+
+.img-name {
+    color: #ccc;
+}
+
+.error {
+    color: darkred;
+}
+
+
+/* * {
+    box-sizing: border-box;
+}  
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formControls {
+    display: block;
+}
+
+.formControl input,
+.formControl textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 30rem;
+    max-width: 100%;
+}
+
+.formControl select {
+    padding: 1px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 100%;
+    margin: 8px;
+}
+
+.formControl input:focus, textarea:focus {
+    outline: none;
+    border-color: #61dafb;
+    background-color: #cef4ff;
+}
+
+label {
+    color: #aaa;
+    width: 6rem;
+    text-align: right;
+    display: inline-block;
+}
+
+.link {
+    cursor: pointer;
+} */

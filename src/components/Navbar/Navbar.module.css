@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #444; */
+}
+
+.boards {
+    color: #aaa;
+}
+
+.nav ul {
+    display: flex;
+    margin: 0 1rem;
+    padding: 0;
+    list-style: none;
+
+}
+
+.nav li {
+    margin: 0 1rem;
+}
+
+.nav a {
+    color: #aaa;
+}
+
+.nav a:hover,
+.nav a:active,
+.nav a.active {
+    color: #61dafb;
+    /* padding-bottom: 0.25rem; */
+    /* border-bottom: 2px solid #61dafb; */
+}

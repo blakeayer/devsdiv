@@ -1,0 +1,23 @@
+.container-column {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1em;
+    color: #aaa;
+}
+
+.container-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-row p {
+    margin-right: 1em;
+}
+
+.username {
+    font-weight: bold;
+    color: #61dafb;
+}
+
+
+
