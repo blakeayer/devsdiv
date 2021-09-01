@@ -1,5 +1,4 @@
-const FIREBASE_DOMAIN = 'https://react-forum-570a5-default-rtdb.firebaseio.com';
-// const FIREBASE_STORAGE = 'gs://react-forum-570a5.appspot.com/'
+const FIREBASE_DOMAIN = process.env.REACT_APP_FIREBASE_DATABASE_URL;
 
 export async function getAllPosts() {
   const response = await fetch(`${FIREBASE_DOMAIN}/posts.json`)
@@ -111,16 +110,6 @@ export async function addComment(requestData) {
 
   return { commentId: data.name };
 }
-// ADD IMAGE
-// export async function addImage(image) {
-//   const uploadTask = await fetch(`${FIREBASE_STORAGE}/images/${image.name}`);
-//   const data = await response.json();
 
-//   if (!response.ok) {
-//     throw new Error(data.message || 'Could not create post.');
-//   }
-
-//   return null;
-// }
 
 

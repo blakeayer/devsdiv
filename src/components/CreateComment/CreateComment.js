@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import firebase from 'firebase';
+import { db, increment } from '../../firebase/firebase'
 
 import useHttp from '../../hooks/useHttp';
 import { addComment } from '../../lib/api';
@@ -24,11 +24,8 @@ const CreateComment = (props) => {
     const history = useHistory();
     const { currentUser } = useAuth();
     
-    const db = firebase.firestore();
     var docRef = db.collection("increment").doc("postCounter");
-    const increment = firebase.firestore.FieldValue.increment(1);
 
-    // const storage = firebase.storage();
     const [image, setImage] = useState(null);
     const [imageURL, setImageURL] = useState("");
 
@@ -158,54 +155,6 @@ const CreateComment = (props) => {
                     </div>
                 </Modal>}
         </Fragment>
-
-        // <Fragment>
-        //     <div className={classes.center}>
-        //             <span onClick={showModalHandler}>
-        //                 [ Reply ]
-        //             </span>
-        //     </div>
-        //     {showModal && <Backdrop onClick={closeModalHandler} />}
-        //     {showModal && 
-        //         <Modal onClose={closeModalHandler}> 
-        //             <div className={classes.center}>
-                        
-        //                 {isLoading && 
-        //                     <div className={classes.loading}>
-        //                         <LoadingSpinner />
-        //                     </div>}
-                        
-        //                 <form>
-        //                     <div className={classes.formControls}>
-        //                         <div className={classes.formControl}>
-        //                             <div className='CreateComment'>
-        //                                 <TextEditor 
-        //                                     passJsonData={passJsonData} 
-        //                                 />
-        //                             </div>
-        //                         </div>
-        //                     </div>
-
-        //                     {/* TODO: Add file upload with thumbnail logic*/}
-        //                     {/* <div className={classes.formActions}>
-        //                         <button>Upload</button>
-        //                     </div> */}
-                            
-        //                         <button onClick={closeModalHandler}>
-        //                             Cancel
-        //                         </button>
-                            
-        //                         <button 
-        //                             type='submit'
-        //                             onClick={submitFormHandler}
-        //                         >
-        //                             Submit
-        //                         </button>
-
-        //                 </form>
-        //             </div>
-        //         </Modal>}
-        // </Fragment>
     );
 };
 

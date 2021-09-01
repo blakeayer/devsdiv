@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
-import firebase from 'firebase/app';
-// import { firestore } from '../../firebase/firebase';
+import { db, increment } from '../../firebase/firebase'
 
 import useHttp from '../../hooks/useHttp';
 import { addPost } from '../../lib/api';
@@ -25,11 +24,8 @@ const CreatePost = (props) => {
     const titleInputRef = useRef();
     const { currentUser } = useAuth();
     
-    const db = firebase.firestore();
     var docRef = db.collection("increment").doc("postCounter");
-    const increment = firebase.firestore.FieldValue.increment(1);
 
-    // const storage = firebase.storage();
     const [image, setImage] = useState(null);
     const [imageURL, setImageURL] = useState("");
 

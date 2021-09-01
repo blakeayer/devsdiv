@@ -35,7 +35,7 @@ div.CreateComment div.public-DraftEditor-content {
 }
 
 div.PostDetail div.DraftEditor-root {
-    max-height: 10rem;
+    /* max-height: 10rem; */
     overflow-y: auto;
     display: inline-block;
 }

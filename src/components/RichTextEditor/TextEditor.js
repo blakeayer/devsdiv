@@ -6,9 +6,8 @@ import InlineStyleControls from './InlineStyleControls';
 
 import '../../../node_modules/draft-js/dist/Draft.css';
 import './styles.css';
-// import classes from './TextEditor.module.css';
 
-const TextEditor = (props) => {
+const TextEditor = ({passJsonData}) => {
     
     const [ editorState, setEditorState ] = useState(() => 
         EditorState.createEmpty(),
@@ -51,8 +50,8 @@ const TextEditor = (props) => {
     };
 
     useEffect(() => {
-        props.passJsonData(getContentAsRawJson());
-    }, [editorState, props.passJsonData, getContentAsRawJson])
+        passJsonData(getContentAsRawJson());
+    }, [editorState, passJsonData, getContentAsRawJson])
 
     return (
         <div className='container'>

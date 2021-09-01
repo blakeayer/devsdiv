@@ -17,7 +17,7 @@ const UserProfile = () => {
         // add validation
 
         fetch(
-            'https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDRViT8_6EIXB7kjvQ1ZQemzhn9LC8jfRI', {
+            'https://identitytoolkit.googleapis.com/v1/accounts:update?key=process.env.REACT_APP_FIREBASE_API_KEY', {
                 method: 'POST',
                 body: JSON.stringify({
                     idToken: authCtx.token,
