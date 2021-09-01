@@ -1,7 +1,7 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
-import 'firebase/storage';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import 'firebase/compat/storage';
 
 
 var firebaseConfig = {
@@ -23,4 +23,5 @@ const storage = firebase.storage();
 const increment = firebase.firestore.FieldValue.increment(1);
 
 
-export { auth, storage, db, increment, firebase as default };
+export { auth, storage, db, increment };
+export default firebase;
