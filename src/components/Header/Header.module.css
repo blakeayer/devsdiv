@@ -56,3 +56,7 @@ button {
       transform: rotate(360deg);
     }
 }
+
+.top-padding {
+    padding-top: 20px;
+}

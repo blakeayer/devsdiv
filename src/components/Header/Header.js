@@ -11,14 +11,13 @@ const Header = () => {
 
     return (
         <div className={classes.mainHeader}>
-            {/* {currentUser && currentUser.email} */}
             <header>
                 
                 <div className={classes.container}>
                     <div className={classes.logo}>
                         <Logo className={classes.logo} />
                     </div>
-                    <div className={classes.link}>
+                    <div className={classes['top-padding']}>
                         <Link  to='/home' className={classes.link}><h2>&lt;DevsDiv /&gt;</h2></Link>
                     </div>
                 </div>

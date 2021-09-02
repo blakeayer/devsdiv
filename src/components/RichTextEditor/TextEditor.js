@@ -43,15 +43,21 @@ const TextEditor = ({passJsonData}) => {
     //     return getDefaultKeyBinding(e);
     // }; 
 
-    const getContentAsRawJson = () => {
-        const contentState = editorState.getCurrentContent();
-        const raw = convertToRaw(contentState);
-        return JSON.stringify(raw, null, 2);
-    };
+    // const getContentAsRawJson = () => {
+    //     const contentState = editorState.getCurrentContent();
+    //     const raw = convertToRaw(contentState);
+    //     return JSON.stringify(raw, null, 2);
+    // };
 
     useEffect(() => {
+        const getContentAsRawJson = () => {
+            const contentState = editorState.getCurrentContent();
+            const raw = convertToRaw(contentState);
+            return JSON.stringify(raw, null, 2);
+        };
+
         passJsonData(getContentAsRawJson());
-    }, [editorState, passJsonData, getContentAsRawJson])
+    }, [editorState, passJsonData])
 
     return (
         <div className='container'>
