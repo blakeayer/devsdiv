@@ -32,6 +32,12 @@ const TextEditor = ({passJsonData}) => {
         // return 'not-handled';
     }
 
+    const blockStyleFn = (contentBlock) => {
+        if (contentBlock.getType() === 'code-block') {
+            return 'code-block-style'
+        }
+    };
+
     // const mapKeyToEditorCommand = (e) => {
     //     if (e.keyCode === 9) {
     //         const newEditorState = RichUtils.onTab(e, editorState, 4);
@@ -42,12 +48,6 @@ const TextEditor = ({passJsonData}) => {
     //     }
     //     return getDefaultKeyBinding(e);
     // }; 
-
-    // const getContentAsRawJson = () => {
-    //     const contentState = editorState.getCurrentContent();
-    //     const raw = convertToRaw(contentState);
-    //     return JSON.stringify(raw, null, 2);
-    // };
 
     useEffect(() => {
         const getContentAsRawJson = () => {
@@ -81,6 +81,7 @@ const TextEditor = ({passJsonData}) => {
                     editorState={editorState} 
                     onChange={setEditorState} 
                     handleKeyCommand={handleKeyCommand}
+                    blockStyleFn={blockStyleFn}
                     // keyBindingFn={mapKeyToEditorCommand}
                 />
             </div>

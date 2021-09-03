@@ -59,3 +59,11 @@ div.PostDetail div.public-DraftEditor-content {
     display: flex;
     justify-content: space-between;
 }
+
+.code-block-style {
+    color: #cd5334;
+    background-color: #262931;
+    /* border: 1px solid #999; */
+    margin: 0 1em;
+    padding: 0 .5em;
+}

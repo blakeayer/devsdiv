@@ -24,6 +24,13 @@ export const AuthContextProvider = (props) => {
         return auth.signOut();
     };
 
+    const value = {
+        currentUser,
+        login,
+        logout,
+        signup
+    }
+
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             setCurrentUser(user)
@@ -31,13 +38,6 @@ export const AuthContextProvider = (props) => {
         })
         return unsubscribe;
     }, [setCurrentUser, setIsLoading])
-
-    const value = {
-        currentUser,
-        login,
-        logout,
-        signup
-    }
     
     return (
         <AuthContext.Provider value={value}>
