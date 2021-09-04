@@ -54,7 +54,7 @@ const Home = () => {
 
             <div className='center'>
                 <Card className={classes.overview}>
-                <h2>Recent Posts</h2>
+                <h2 className={'title'}>Recent Posts</h2>
                     <PostList posts={filteredPosts} />
                 </Card>
             </div>

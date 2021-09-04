@@ -4,7 +4,7 @@ import Card from '../UI/Card';
 const Bulletin = () => {
     return (
         <Fragment>
-            <h2>Bulletin</h2>
+            <h2 className={'title'}>Bulletin</h2>
             <Card>
                 <div className='left'>
                     <p> Thank you for visiting!  This site is still in its beta.  Your patience is appreciated!</p>

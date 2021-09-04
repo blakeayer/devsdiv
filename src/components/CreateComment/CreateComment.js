@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import { db, increment } from '../../firebase/firebase'
+import { firestore, increment } from '../../firebase/firebase'
 
 import useHttp from '../../hooks/useHttp';
 import { addComment } from '../../lib/api';
@@ -24,7 +24,7 @@ const CreateComment = (props) => {
     const history = useHistory();
     const { currentUser } = useAuth();
     
-    var docRef = db.collection("increment").doc("postCounter");
+    var docRef = firestore.collection("increment").doc("postCounter");
 
     const [image, setImage] = useState(null);
     const [imageURL, setImageURL] = useState("");
@@ -112,7 +112,7 @@ const CreateComment = (props) => {
     };
 
     return (
-<Fragment>
+        <Fragment>
             <div className={classes.center}>
                     <span className={classes.link} onClick={showModalHandler}>
                         [ Comment ]

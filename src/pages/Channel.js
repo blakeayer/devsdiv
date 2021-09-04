@@ -61,9 +61,9 @@ const Channel = () => {
         <Fragment>
             <div className={classes.center}>
 
-                {paramsReact && <h2>/r/ - React</h2>}
-                {paramsJavaScript && <h2>/js/ - Vanilla JavaScript</h2>}
-                {paramsPython && <h2>/py/ - Python</h2>}
+                {paramsReact && <h2 className={'title'}>/r/ - React</h2>}
+                {paramsJavaScript && <h2 className={'title'}>/js/ - Vanilla JavaScript</h2>}
+                {paramsPython && <h2 className={'title'}>/py/ - Python</h2>}
                 {currentUser && 
                     <CreatePost channel={params.channel} onAddedPost={addedPostHandler} />
                 }

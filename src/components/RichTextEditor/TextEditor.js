@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Editor, EditorState, RichUtils, convertToRaw } from 'draft-js';
+import React, { useEffect } from 'react';
+import { Editor, RichUtils, convertToRaw } from 'draft-js';
 
 import BlockStyleControls from './BlockStyleControls';
 import InlineStyleControls from './InlineStyleControls';
@@ -7,24 +7,20 @@ import InlineStyleControls from './InlineStyleControls';
 import '../../../node_modules/draft-js/dist/Draft.css';
 import './styles.css';
 
-const TextEditor = ({passJsonData}) => {
-    
-    const [ editorState, setEditorState ] = useState(() => 
-        EditorState.createEmpty(),
-    );
+const TextEditor = ({editorState, onChange, passJsonData, readOnly}) => {
 
     const toggleBlockType = (blockType) => {
-        setEditorState(RichUtils.toggleBlockType(editorState, blockType));
+        onChange(RichUtils.toggleBlockType(editorState, blockType));
      };
 
      const toggleInlineStyle = (inlineStyle) => {
-         setEditorState(RichUtils.toggleInlineStyle(editorState, inlineStyle));
+         onChange(RichUtils.toggleInlineStyle(editorState, inlineStyle));
      };
 
     const handleKeyCommand = (cmd, editorState) => {
         const cmdState = RichUtils.handleKeyCommand(editorState, cmd)
         if (cmdState) {
-            setEditorState(cmdState);
+            onChange(cmdState);
             return true;
             // return 'handled';
         }
@@ -61,7 +57,7 @@ const TextEditor = ({passJsonData}) => {
 
     return (
         <div className='container'>
-            <div className='menu'>
+            {!readOnly && <div className='menu'>
                 <div className='blockStyleControls'>
                     <BlockStyleControls
                         editorState={editorState}
@@ -74,12 +70,12 @@ const TextEditor = ({passJsonData}) => {
                         onToggle={toggleInlineStyle}
                     />
                 </div>
-            </div>
+            </div>}
             <div>
                 <Editor
+                    editorState={editorState}
                     placeholder="Enter content..." 
-                    editorState={editorState} 
-                    onChange={setEditorState} 
+                    onChange={onChange} 
                     handleKeyCommand={handleKeyCommand}
                     blockStyleFn={blockStyleFn}
                     // keyBindingFn={mapKeyToEditorCommand}

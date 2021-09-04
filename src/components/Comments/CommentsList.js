@@ -57,6 +57,7 @@ const CommentsList = () => {
 
                                     <div className={classes.listItem}>
                                         <CommentDetail
+                                            postId={postId}
                                             id={comment.postId}
                                             key={comment.id}
                                             uri={comment.id}

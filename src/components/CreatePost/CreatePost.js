@@ -1,6 +1,8 @@
 import React, { Fragment, useEffect, useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
-import { db, increment } from '../../firebase/firebase'
+import { firestore, increment } from '../../firebase/firebase'
+import { EditorState } from 'draft-js';
+
 
 import useHttp from '../../hooks/useHttp';
 import { addPost } from '../../lib/api';
@@ -19,12 +21,16 @@ const CreatePost = (props) => {
     const [showModal, setShowModal] = useState();
     const [error, setError] = useState(null);
     const [textEditorData, setTextEditorData] = useState('');
+    const [ editorState, setEditorState ] = useState(() => 
+        EditorState.createEmpty(),
+    );
+
     const { sendRequest, status } = useHttp(addPost);
     const history = useHistory();
     const titleInputRef = useRef();
     const { currentUser } = useAuth();
     
-    var docRef = db.collection("increment").doc("postCounter");
+    var docRef = firestore.collection("increment").doc("postCounter");
 
     const [image, setImage] = useState(null);
     const [imageURL, setImageURL] = useState("");
@@ -88,7 +94,7 @@ const CreatePost = (props) => {
         
         async function post() {
             try {
-                await docRef.update({ count: increment});
+                await docRef.update({count: increment});
                 const getDoc = await docRef.get();
                 const getPostId = await getDoc.data().count;
                 await sendRequest({
@@ -144,8 +150,12 @@ const CreatePost = (props) => {
                                 
                                 <div className={classes.formControl}>
                                     <div className='CreatePost'>
-                                        <TextEditor passJsonData={passJsonData} />  
-                                    </div>
+                                        <TextEditor 
+                                            editorState={editorState}
+                                            onChange={setEditorState}
+                                            passJsonData={passJsonData} 
+                                        />  
+                                    </div>  
                                 </div>
 
                             </div>
