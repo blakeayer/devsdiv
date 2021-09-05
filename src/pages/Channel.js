@@ -42,12 +42,12 @@ const Channel = () => {
     
     // Render state dependent on sendRequest()
     if (status === 'pending') {
-        return <div className={classes.center}>
+        return <div className={'center'}>
             <LoadingSpinner />
         </div>
     }
     if (error) {
-        return <p className={classes.center}>
+        return <p className={'center'}>
             {error}
         </p>
     }
@@ -59,7 +59,7 @@ const Channel = () => {
         
     return (
         <Fragment>
-            <div className={classes.center}>
+            <div className={'center'}>
 
                 {paramsReact && <h2 className={'title'}>/r/ - React</h2>}
                 {paramsJavaScript && <h2 className={'title'}>/js/ - Vanilla JavaScript</h2>}
@@ -69,8 +69,8 @@ const Channel = () => {
                 }
 
             </div>
-            <div className={classes.center}>
-                    <Card className={classes.overview}>
+            <div className={'center'}>
+                    <Card className={classes['list-wrapper']}>
                         <PostList posts={filteredPosts} />
                     </Card>
             </div>

@@ -1,8 +1,9 @@
 .img-wrap img {
     max-width: 150px;
+    min-width: 150px;
     max-height: 150px;
     cursor: pointer;
-    object-fit:contain;
+    object-fit: contain;
 }
 
 .enlarged-img {

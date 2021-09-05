@@ -1,24 +1,31 @@
 ul.list {
-    display: block;
-    list-style-type: none;
+    list-style-type: none;    
     padding: 0;
 }
 
-.listItem {
-    max-height: 14rem;
+.list-item-wrapper {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.list-item-container {
+    display: flex;
+}
+
+.list-item {
+    max-height: 25vh;
     overflow: hidden;
     text-align: left;
     flex: 4;
 }
 
-.listItemWrapper {
-    margin-bottom: 20px;
-}
-
-.thumbnail {
+.thumbnail-wrapper {
     flex: 1;
 }
 
-.container-row {
-    display: flex;
+@media all and (max-width: 600px) {
+    .list-item-container {
+        display: block;
+    }
 }
+

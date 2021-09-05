@@ -16,10 +16,10 @@ export default function Thumbnail(props) {
 
     return (
         <Fragment>
-            <span onClick={showModalHandler}>
-                <div className={classes['img-wrap']}>
+            <span className={classes['img-wrap']} onClick={showModalHandler}>
+                {/* <div className={classes['img-wrap']}> */}
                     <img src={props.url} alt='project screenshot' />
-                </div>
+                {/* </div> */}
             </span>
             {showModal && <Backdrop onClick={closeModalHandler} />}
             {showModal && 

@@ -6,6 +6,34 @@ body {
   color: #aaa;
 }
 
+a:link {
+  text-decoration: none;
+}
+
+.center {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+  text-align: center
+}
+
+.left {
+  text-align: left;
+}
+
+.title {
+  margin-bottom: 1em;
+  color: #61dafb;
+}
+
+.progress-bar {
+  display: block;
+  height: .25rem;
+  background: #61dafb;
+  margin: .5rem 0;
+}
+
 ::-webkit-scrollbar{
   width: 10px;
 }
@@ -19,31 +47,4 @@ body {
   border-radius: 6px;
   /* box-shadow:  3px 3px 3px #181a1f,
                -3px -3px 3px #202329; */
-}
-
-a:link {
-  text-decoration: none;
-}
-
-.center {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  margin: 3rem 0;
-  text-align: center
-}
-
-.title {
-  color: #61dafb;
-}
-
-.progress-bar {
-  display: block;
-  height: .25rem;
-  background: #61dafb;
-  margin: .5rem 0;
-}
-
-.left {
-  text-align: left;
 }

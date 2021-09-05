@@ -1,12 +1,4 @@
 .overview {
-    padding: 1rem 1rem;
-    margin: 3rem 10rem;
-}
-
-.center {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    margin: 3rem 0;
-    text-align: center;
+    padding: 1em 1em;
+    margin: 1em 1em;
 }

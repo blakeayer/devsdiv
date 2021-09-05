@@ -22,12 +22,12 @@ const Home = () => {
     
     // Render state dependent on sendRequest()
     if (status === 'pending') {
-        return <div className='center'>
+        return <div className={'center'}>
             <LoadingSpinner />
         </div>
     }
     if (error) {
-        return <p className='center'>
+        return <p className={'center'}>
             {error}
         </p>
     }
@@ -39,9 +39,9 @@ const Home = () => {
         
     return (
         <Fragment>
-            <div className='center'>
+            <div className={'center'}>
                 {!currentUser &&
-                    <div className='center'>
+                    <div className={'center'}>
                         <h2>Welcome to the Developer's Division</h2>
                         <h4>&lt;DevsDiv /&gt; is an image-based forum where developers can share their work.</h4>
                         <h4>Visitors do not need an account to view posts, but must register to participate in the community.</h4>
@@ -52,9 +52,9 @@ const Home = () => {
                 </Card>
             </div>
 
-            <div className='center'>
+            <div className={'center'}>
                 <Card className={classes.overview}>
-                <h2 className={'title'}>Recent Posts</h2>
+                    <h2 className={'title'}>Recent Posts</h2>
                     <PostList posts={filteredPosts} />
                 </Card>
             </div>

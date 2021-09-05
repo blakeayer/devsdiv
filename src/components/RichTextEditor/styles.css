@@ -1,8 +1,8 @@
 /* <CreatePost /> Text Editor Styles */
 div.CreatePost div.DraftEditor-root {
-    width: 30rem;
-    height: 10rem;
-    max-height: 10rem;
+    width: 70vw;
+    height: 50vh;
+    /* max-height: 10rem; */
     overflow-y: auto;
     background-color: white;
     border: 1px solid #ccc;
@@ -18,9 +18,9 @@ div.CreatePost div.public-DraftEditor-content {
 
 /* <CreateComment /> Text Editor Styles */
 div.CreateComment div.DraftEditor-root {
-    width: 30rem;
-    height: 10rem;
-    max-height: 10rem;
+    width: 70vw;
+    height: 50vh;
+    /* max-height: 10rem; */
     overflow-y: auto;
     background-color: white;
     border: 1px solid #ccc;

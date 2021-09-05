@@ -1,22 +1,4 @@
-.overview {
-    padding: 1rem 1rem;
-    margin: 3rem 10rem;
-}
-
-.center {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    margin: 3rem 0;
-    text-align: center;
-}
-
-.center h4 {
-    text-align: center; 
-    color: #aaa;
- }
-
-h2 {
-    text-align: center;
-    margin-bottom: 1rem;
+.list-wrapper {
+    padding: 1em 1em;
+    margin: 1em 1em;
 }
