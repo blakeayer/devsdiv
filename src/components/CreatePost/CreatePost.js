@@ -3,8 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { firestore, increment } from '../../firebase/firebase'
 import { EditorState } from 'draft-js';
 
-
 import useHttp from '../../hooks/useHttp';
+import { useAuth } from '../../store/AuthContext' 
 import { addPost } from '../../lib/api';
 
 import Modal from '../UI/Modal';
@@ -13,8 +13,7 @@ import LoadingSpinner from '../UI/LoadingSpinner';
 import TextEditor from '../RichTextEditor/TextEditor';
 import ProgressBar from '../UI/ProgressBar';
 
-import classes from './CreatePost.module.css'
-import { useAuth } from '../../store/AuthContext' 
+import classes from './CreatePost.module.css';
 
 const CreatePost = (props) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -35,7 +34,6 @@ const CreatePost = (props) => {
     const [image, setImage] = useState(null);
     const [imageURL, setImageURL] = useState("");
 
-        
     const imgChangeHandler = (event) => {
         let selected = event.target.files[0];
         const types = ['image/png', 'image/jpeg'];
@@ -96,9 +94,11 @@ const CreatePost = (props) => {
             try {
                 await docRef.update({count: increment});
                 const getDoc = await docRef.get();
-                const getPostId = await getDoc.data().count;
+                // const getPostId = await getDoc.data().count;
+                const { count } = await getDoc.data();
                 await sendRequest({
-                    postId: getPostId,
+                    // postId: getPostId,
+                    postId: count,
                     channel: props.channel,
                     content: enteredContent,
                     url: imageURL,

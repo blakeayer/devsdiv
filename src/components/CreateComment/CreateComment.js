@@ -1,8 +1,10 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { firestore, increment } from '../../firebase/firebase'
+import { EditorState } from 'draft-js';
 
 import useHttp from '../../hooks/useHttp';
+import { useAuth } from '../../store/AuthContext' 
 import { addComment } from '../../lib/api';
 
 import Modal from '../UI/Modal';
@@ -11,17 +13,21 @@ import LoadingSpinner from '../UI/LoadingSpinner';
 import TextEditor from '../RichTextEditor/TextEditor';
 import ProgressBar from '../UI/ProgressBar';
 
-import classes from './CreateComment.module.css'
-import { useAuth } from '../../store/AuthContext' 
+import classes from './CreateComment.module.css';
 
 const CreateComment = (props) => {
     const [isLoading, setIsLoading] = useState(false);
     const [showModal, setShowModal] = useState();
     const [error, setError] = useState(null);
     const [textEditorData, setTextEditorData] = useState('');
+    const [ editorState, setEditorState ] = useState(() => 
+        EditorState.createEmpty(),
+    );
+
     const { sendRequest, status } = useHttp(addComment); //TODO: define error and add use case.
-    const params = useParams();
     const history = useHistory();
+    // const titleInputRef = useRef();
+    const params = useParams();
     const { currentUser } = useAuth();
     
     var docRef = firestore.collection("increment").doc("postCounter");
@@ -81,7 +87,7 @@ const CreateComment = (props) => {
         var time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
         var dateTime = date + ' ' + time;
 
-        //Validate here
+        //TODO: Add Validation here
 
 
         async function post() {
@@ -131,10 +137,23 @@ const CreateComment = (props) => {
                         <form>
 
                             <div className={classes.formControls}>
+
+                                {/* <div className={classes.formControl}>
+                                    <input 
+                                        placeholder='Title'
+                                        type='text' 
+                                        id='title' 
+                                        ref={titleInputRef} 
+                                    />
+                                </div> */}
                                 
                                 <div className={classes.formControl}>
                                     <div className='CreateComment'>
-                                        <TextEditor passJsonData={passJsonData} />  
+                                        <TextEditor 
+                                            editorState={editorState}
+                                            onChange={setEditorState}
+                                            passJsonData={passJsonData} 
+                                        />   
                                     </div>
                                 </div>
 

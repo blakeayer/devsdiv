@@ -33,7 +33,6 @@ const ActivePost = () => {
 
   const addedCommentHandler = () => {
     sendRequest(postId);
-    console.log('addedCommentHandler');
 };
 
   if (status === 'pending') {

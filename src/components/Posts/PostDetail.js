@@ -41,6 +41,10 @@ const PostDetail = (props) => {
     };
 
     useEffect(() => {
+        // console.log(textEditorData);
+    }, [textEditorData])
+
+    useEffect(() => {
         sendRequest(postId);
     }, [sendRequest, postId, changeMade])
 

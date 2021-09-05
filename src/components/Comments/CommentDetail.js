@@ -38,7 +38,11 @@ const CommentDetail = (props) => {
  
      const passJsonData = (jsonString) => {
          setTextEditorData(jsonString)
-     };
+    };
+
+     useEffect(() => {
+        // console.log(textEditorData);
+     }, [textEditorData])
 
     useEffect(() => {
         sendRequest(postId);
