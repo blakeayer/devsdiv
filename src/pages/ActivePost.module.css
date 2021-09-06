@@ -1,27 +1,22 @@
-ul.list {
-    display: block;
-    list-style-type: none;
-    padding: 0;
+.active-post-wrapper {
+    margin: 2em;
 }
 
-.listItem {
-    text-align: left;
-    /* margin: 0 8rem; */
-    flex: 5;
-}
-
-.thumbnail {
-    flex: 1;
-}
-
-.container-row {
+.active-post-container {
     display: flex;
 }
 
-.listWrapper {
-    margin: 1.5rem 8vw 0 12vw;
+.active-post {
+    text-align: left;
+    flex: 4;
 }
 
-.active-post {
-    margin: 0 8vw 0 4vw;
+.comment-list-wrapper {
+    margin: 2em;
+}
+
+@media all and (max-width: 750px) {
+    .active-post-container {
+        display: block;
+    }
 }

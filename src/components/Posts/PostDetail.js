@@ -68,18 +68,18 @@ const PostDetail = (props) => {
 
     return (
             
-        <div className={classes['container-column']}>
+        <div className={classes['post-detail-container']}>
 
-            <div className={classes['space-between']}>
-                <div className={classes['container-row']}>
-                    <p className={classes.username}>{props.author}</p>
-                    <p>{props.dateTime}</p>
-                    <p>#{props.id}</p>
+                <div className={classes['post-header-container']}>
+                    <div className={classes['post-header']}>
+                        <p className={classes.username}>{props.author}</p>
+                        <p>{props.dateTime}</p>
+                        <p>#{props.id}</p>
+                    </div>
+                    {currentUser && (currentUser.email === props.author) 
+                        && <div onClick={editPostHandler}>Edit</div>
+                    }
                 </div>
-                {currentUser && (currentUser.email === props.author) 
-                    && <div onClick={editPostHandler}>Edit</div>
-                }
-            </div>
 
             <h3>{props.title}</h3>
             <div className='PostDetail'>

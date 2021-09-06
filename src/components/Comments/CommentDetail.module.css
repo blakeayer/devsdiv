@@ -1,20 +1,19 @@
-.container-column {
+.comment-detail-container {
     display: flex;
     flex-direction: column;
     margin: 0 1em;
     color: #aaa;
 }
 
-.container-row {
+.comment-header {
     display: flex;
-    flex-direction: row;
 }
 
-.container-row p {
+.comment-header p {
     margin-right: 1em;
 }
 
-.space-between {
+.comment-header-container {
     display: flex;
     justify-content: space-between;
 }
@@ -22,6 +21,12 @@
 .username {
     font-weight: bold;
     color: #61dafb;
+}
+
+@media all and (max-width: 600px) {
+    .comment-header {
+        display: inline-block;
+    }
 }
 
 

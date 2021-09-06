@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import useHttp from '../../hooks/useHttp';
@@ -43,19 +43,16 @@ const CommentsList = () => {
     if (status === 'completed' && loadedComments) {
         // console.log(loadedComments);
         return (
-            <Fragment>
                 <ul className={classes.list}>
                     {loadedComments.map((comment) => (
-                        <div className={classes.listItemWrapper} key={comment.id}>      
+                        <div className={`${classes['list-item-wrapper']} ${'center'}`} key={comment.id}>      
                             <Card>
 
-                                <div className={classes['container-row']}>
+                                <div className={classes['list-item-container']}>
 
-                                    <div className={classes.thumbnail}>
-                                        <Thumbnail url={comment.url} />
-                                    </div>
+                                    <Thumbnail url={comment.url} />
 
-                                    <div className={classes.listItem}>
+                                    <div className={classes['list-item']} >
                                         <CommentDetail
                                             postId={postId}
                                             id={comment.postId}
@@ -74,7 +71,6 @@ const CommentsList = () => {
                         </div>
                     ))}
                 </ul>
-            </Fragment>
         );
     }
 

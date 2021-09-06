@@ -19,11 +19,7 @@ ul.list {
     flex: 4;
 }
 
-.thumbnail-wrapper {
-    flex: 1;
-}
-
-@media all and (max-width: 600px) {
+@media all and (max-width: 750px) {
     .list-item-container {
         display: block;
     }

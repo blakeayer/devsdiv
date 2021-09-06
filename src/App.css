@@ -6,6 +6,10 @@ body {
   color: #aaa;
 }
 
+button {
+  margin: 0 .5em;
+}
+
 a:link {
   text-decoration: none;
 }

@@ -61,33 +61,34 @@ const ActivePost = () => {
     <Fragment>
       { !currentUser && <div className='center'></div>}
       { currentUser && 
-      <div className='center'>
-        <CreateComment channel={channel} onAddedComment={addedCommentHandler} />
-      </div>
-      }
-      <Card className={classes['active-post']}>
-        <div className={classes['container-row']}>
-
-          <div className={classes.thumbnail}>
-            <Thumbnail url={loadedPost.url}/>
-          </div>
-
-          <div className={classes.listItem} >
-            <PostDetail
-              key={loadedPost.id}
-              id={loadedPost.postId}
-              uri={loadedPost.id}
-              author={loadedPost.author}
-              dateTime={loadedPost.dateTime.toLocaleString('en-US', {dateStyle:'short', timeStyle: 'long'})}
-              title={loadedPost.title}
-              content={loadedPost.content}
-              channel={loadedPost.channel}
-            />
-          </div>
-
+        <div className='center'>
+          <CreateComment channel={channel} onAddedComment={addedCommentHandler} />
         </div>
-      </Card>
-      <div className={classes.listWrapper}>
+      }
+
+        <div className={`${classes['active-post-wrapper']} ${'center'}`}>
+          <Card>
+            <div className={classes['active-post-container']}>
+
+              <Thumbnail url={loadedPost.url}/>
+
+              <div className={classes['active-post']} >
+                <PostDetail
+                  key={loadedPost.id}
+                  id={loadedPost.postId}
+                  uri={loadedPost.id}
+                  author={loadedPost.author}
+                  dateTime={loadedPost.dateTime.toLocaleString('en-US', {dateStyle:'short', timeStyle: 'long'})}
+                  title={loadedPost.title}
+                  content={loadedPost.content}
+                  channel={loadedPost.channel}
+                />
+              </div>
+
+            </div>
+          </Card>
+        </div>
+      <div className={classes['comment-list-wrapper']}>
         <CommentsList />
       </div>
     </Fragment>

@@ -68,10 +68,10 @@ const CommentDetail = (props) => {
 
     return (
 
-        <div className={classes['container-column']}>
+        <div className={classes['comment-detail-container']}>
             
-            <div className={classes['space-between']}>
-                <div className={classes['container-row']}>
+            <div className={classes['comment-header-container']}>
+                <div className={classes['comment-header']}>
                     <p className={`${classes.username}`}>{props.author}</p>
                     <p>{props.dateTime}</p>
                     <p>#{props.id}</p>
@@ -81,7 +81,7 @@ const CommentDetail = (props) => {
                 }
             </div>
 
-            {/* <h3>props.title</h3> */}
+            <h3>{props.title}</h3>
             <div className='CommentDetail'>
                 {readOnly && 
                     <TextEditor 

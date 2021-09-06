@@ -1,22 +1,24 @@
 ul.list {
-    display: block;
-    list-style-type: none;
+    list-style-type: none;    
     padding: 0;
 }
 
-.listItem {
-    text-align: left;
-    flex: 6;
+.list-item-wrapper {
+    display: block;
+    margin-bottom: 1em;
 }
 
-.listItemWrapper {
-    margin-bottom: 20px;
-}
-
-.thumbnail {
-    flex: 1;
-}
-
-.container-row {
+.list-item-container {
     display: flex;
+}
+
+.list-item {
+    text-align: left;
+    flex: 4;
+}
+
+@media all and (max-width: 750px) {
+    .list-item-container {
+        display: block;
+    }
 }

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState, useRef } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { firestore, increment } from '../../firebase/firebase'
 import { EditorState } from 'draft-js';
@@ -26,7 +26,7 @@ const CreateComment = (props) => {
 
     const { sendRequest, status } = useHttp(addComment); //TODO: define error and add use case.
     const history = useHistory();
-    // const titleInputRef = useRef();
+    const titleInputRef = useRef();
     const params = useParams();
     const { currentUser } = useAuth();
     
@@ -80,7 +80,7 @@ const CreateComment = (props) => {
         event.preventDefault();
         setIsLoading(true);
 
-        // const enteredTitle = titleInputRef.current.value;
+        const enteredTitle = titleInputRef.current.value;
         const enteredContent = textEditorData;
         const today = new Date();
         var date = (today.getMonth()+1) + '/' + today.getDate() + '/' + today.getFullYear();
@@ -102,6 +102,7 @@ const CreateComment = (props) => {
                     url: imageURL,
                     dateTime: dateTime,
                     author: currentUser.email,
+                    title: enteredTitle,
                 }, 
                 postId: params.postId
                 });
@@ -138,14 +139,14 @@ const CreateComment = (props) => {
 
                             <div className={classes.formControls}>
 
-                                {/* <div className={classes.formControl}>
+                                <div className={classes.formControl}>
                                     <input 
                                         placeholder='Title'
                                         type='text' 
                                         id='title' 
                                         ref={titleInputRef} 
                                     />
-                                </div> */}
+                                </div>
                                 
                                 <div className={classes.formControl}>
                                     <div className='CreateComment'>
