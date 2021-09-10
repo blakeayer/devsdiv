@@ -95,25 +95,24 @@ const Register = () => {
 
         try {
             await signup(enteredEmail, enteredPassword)
+            try {
+                await login(enteredEmail, enteredPassword)
+                setIsLoading(false);
+                resetFirstNameInput();
+                resetLastNameInput();
+                resetEmailInput();
+                resetBirthDateInput();
+                resetPasswordInput();
+                history.replace('/');
+            } catch {
+                setError('Unable to log in.')
+                alert(error);
+            }
         } catch {
             setError('Failed to create account.')
             alert(error);
         }
 
-        try {
-            await login(enteredEmail, enteredPassword)
-        } catch {
-            setError('Unable to log in.')
-            alert(error);
-        }
-
-        setIsLoading(false);
-        resetFirstNameInput();
-        resetLastNameInput();
-        resetEmailInput();
-        resetBirthDateInput();
-        resetPasswordInput();
-        history.replace('/');
     };
     
     const firstNameInputClasses = firstNameInputHasError 

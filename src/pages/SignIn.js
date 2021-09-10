@@ -56,15 +56,15 @@ const SignIn = () => {
 
         try {
             await login(enteredEmail, enteredPassword)
+            setIsLoading(false);
+            resetEmailInput();
+            resetPasswordInput();
             history.replace('/');
         } catch {
             setError('Failed to sign in.')
             alert(error);
         }
 
-        setIsLoading(false);
-        resetEmailInput();
-        resetPasswordInput();
     };
 
     // Dynamic styling depending on input validation

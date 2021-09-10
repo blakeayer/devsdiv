@@ -13,7 +13,7 @@ import AuthContext from './store/AuthContext';
 
 function App() {
   const authCtx = useContext(AuthContext);
-  
+
   return (
     <Fragment>
       <Header />

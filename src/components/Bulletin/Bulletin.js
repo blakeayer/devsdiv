@@ -17,6 +17,9 @@ const Bulletin = () => {
                     </div>
                     <p>TODO List:</p>
                     <ul>
+                        <li>CreatePost should route to newly made post</li>
+                        <li>EditPost needs to refresh after fetch request succeeds, possibly implement history.replace(current dir)</li>
+                        <li>Add footer</li>
                         <li>Improve WYSIWYG functionality</li>
                         <li>Add user profile page</li>
                         <li>Add pagination</li>
@@ -27,7 +30,7 @@ const Bulletin = () => {
                     </ul>
                     <p>Known Bugs:</p>
                     <ul>
-                        <li>All fixed.</li>
+                        <li>2nd comment not collapsing corretly at 750px, TextEditor appears to have fixed width.</li>
                     </ul>
                 </div>
             </Card>

@@ -20,19 +20,25 @@ const EditComment = (props) => {
         
     }, [textEditorData])
 
-    const submitFormHandler =  (event) => {
+    const submitFormHandler = async (event) => {
         event.preventDefault();
         const commentRef = database.ref('comments').child(props.postId).child(props.commentId);
-        async function post () {
-            try {
+            
+        try {
             await commentRef.update({content: textEditorData});
-            await props.editCommentHandler();
-            await props.changeMadeHandler();
-            } catch (error) {
-                alert(error);
-            }
+        } catch (error) {
+            alert(error);
         }
-        post();
+        try {
+            await props.editCommentHandler();
+        } catch (error) {
+            alert(error);
+        }
+        try {
+            await props.changeMadeHandler();
+        } catch (error) {
+            alert(error);
+        }
     };
 
     return (
