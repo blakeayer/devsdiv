@@ -167,7 +167,6 @@ const CreatePost = (props) => {
                                 { image && <div className={classes['img-name']}>{image.name}</div>}
                                 { image && <ProgressBar image={image} setImage={setImage} passUrl={passUrl} />}
                             
-                            
                             <button onClick={closeModalHandler}>Cancel</button>
                             <button onClick={submitFormHandler} type='submit'>Submit</button>
 

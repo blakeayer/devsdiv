@@ -15,23 +15,27 @@ const Bulletin = () => {
                         <p>DevsDiv was built with React, utilizing React-Router for navigation, Draft.js for text editing, and Firebase as a back-end.  In the near future, I have plans to implement Next.js for server-side rendering and probably React-Bootstrap for styling although I'm considering Styled-Components.</p>
                         <p>Anyone interested in checking out the code can do so at: <a href='https:/github.com/blakeayer/devsdiv'>https:/github.com/blakeayer/devsdiv</a></p>
                     </div>
-                    <p>TODO List:</p>
-                    <ul>
-                        <li>CreatePost should route to newly made post</li>
-                        <li>EditPost needs to refresh after fetch request succeeds, possibly implement history.replace(current dir)</li>
-                        <li>Add footer</li>
-                        <li>Improve WYSIWYG functionality</li>
-                        <li>Add user profile page</li>
-                        <li>Add pagination</li>
-                        <li>Implement styling and icon libraries</li>
-                        <li>Improve responsiveness and accessibility</li>
-                        <li>Improve form validation</li>
-                        <li>...</li>
-                    </ul>
-                    <p>Known Bugs:</p>
-                    <ul>
-                        <li>2nd comment not collapsing corretly at 750px, TextEditor appears to have fixed width.</li>
-                    </ul>
+                    <div className={classes.todo}>
+                        <h4>TODO List:</h4>
+                        <ul>
+                            <li>CreatePost should route to newly made post</li>
+                            <li>EditPost needs to refresh after fetch request succeeds, possibly implement history.replace(current dir)</li>
+                            <li>Add footer</li>
+                            <li>Improve WYSIWYG functionality</li>
+                            <li>Add user profile page</li>
+                            <li>Add pagination</li>
+                            <li>Implement styling and icon libraries</li>
+                            <li>Improve responsiveness and accessibility</li>
+                            <li>Improve form validation</li>
+                            <li>...</li>
+                        </ul>
+                    </div>
+                    <div className={classes.bugs}>
+                        <h4>Known Bugs:</h4>
+                        <ul>
+                            <li>Long, unbroken strings (such as URLs) do not wrap at 750px, but begin wrapping at lower resolutions </li>
+                        </ul>
+                    </div>
                 </div>
             </Card>
         </Fragment>

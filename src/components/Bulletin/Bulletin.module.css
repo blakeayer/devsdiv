@@ -1,7 +1,7 @@
-.intro h4 {
-    margin-bottom: .5em;
+.intro, .todo, .bugs, h4 {
+    margin: 2em 1em 1em 1em;
 }
 
 .intro p {
     margin-bottom: .5em;
-}
+}   
